@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import {

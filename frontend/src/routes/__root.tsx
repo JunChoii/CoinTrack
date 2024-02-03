@@ -7,32 +7,31 @@ export const Route = createRootRoute({
 });
 
 function RootLayout() {
-
   return (
     <>
-      <div className="py-2 flex max-w-2xl mx-auto justify-between items-center ">
-        <Link to="/" className="text-2xl">
-          Expense Tracker
+      <div className="py-2 flex max-w-2xl mx-auto justify-between items-center">
+        <Link to="/" className="text-2xl ml-5">
+          Coin Track
         </Link>
-        <div className="flex gap-x-4">
+        <div className="flex gap-x-4 mr-5">
           {" "}
+          <Link
+            to="/"
+            className="[&.active]:text-foreground text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Total
+          </Link>{" "}
           <Link
             to="/all-expenses"
             className="[&.active]:text-foreground text-muted-foreground hover:text-foreground transition-colors"
           >
-            All Expenses
+            All
           </Link>{" "}
           <Link
             to="/new-expense"
             className="[&.active]:text-foreground text-muted-foreground hover:text-foreground transition-colors"
           >
-            New Expense
-          </Link>
-          <Link
-            to="/about"
-            className="[&.active]:text-foreground text-muted-foreground hover:text-foreground transition-colors"
-          >
-            About
+            New
           </Link>
         </div>
       </div>

@@ -50,6 +50,6 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 // app.MapFallbackToFile("index.html");
 
-app.MapGet("/", () => "Expense Tracker");
+app.MapGet("/", () => "CoinTrack");
 
 app.Run();

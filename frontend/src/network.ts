@@ -34,21 +34,31 @@ export async function createExpense({
 
 export async function updateExpense({
   id,
-  newExpense,
+  title,
+  total,
 }: {
   id: number;
-  newExpense: Expense;
-}) {
-  console.log("updateExpense", id, newExpense);
-  let resp = await fetch(`/api/expenses/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newExpense),
-  });
+  title: string;
+  total: number;
+}): Promise<Expense> {
+  try {
+    const result = await fetch(`/api/Expenses/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, total }),
+    });
 
-  return resp;
+    if (!result.ok) {
+      throw new Error("Failed to update expense");
+    }
+
+    return await result.json();
+  } catch (error) {
+    console.error("Error updating expense:", error);
+    throw error;
+  }
 }
 
 // export default async function getExpenseByRating(rating: number) {

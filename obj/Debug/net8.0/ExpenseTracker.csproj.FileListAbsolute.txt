@@ -112,3 +112,4 @@ C:\Users\junab\OneDrive\Desktop\Programming\BCIT Term 4\SaMNet\A1\seashark1-JunC
 C:\Users\junab\OneDrive\Desktop\Programming\BCIT Term 4\SaMNet\A1\seashark1-JunChoii\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\junab\OneDrive\Desktop\Programming\BCIT Term 4\SaMNet\A1\seashark1-JunChoii\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\junab\OneDrive\Desktop\Programming\BCIT Term 4\SaMNet\A1\seashark1-JunChoii\obj\Debug\net8.0\ExpenseTracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\junab\OneDrive\Desktop\Programming\BCIT Term 4\SaMNet\A1\seashark1-JunChoii\bin\Debug\net8.0\ExpenseTracker.staticwebassets.runtime.json

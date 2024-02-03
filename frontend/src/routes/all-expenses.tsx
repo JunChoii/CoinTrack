@@ -9,21 +9,16 @@ import {
 } from "@/components/ui/table";
 import { formatCurrency } from "@/lib/utils";
 import { createFileRoute } from "@tanstack/react-router";
-import { getExpenses } from "@/network";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/main";
-import { deleteExpense, Expense, updateExpense } from "@/network";
-import React from "react";
+import { deleteExpense, Expense } from "@/network";
+// import { Button, buttonVariants } from "@/components/ui/button";
 
 export const Route = createFileRoute("/all-expenses")({
   component: AllExpenses,
 });
 
 function AllExpenses() {
-  const [editingExpense, setEditingExpense] = React.useState<Expense | null>(
-    null
-  );
-
   let { isPending, error, data } = useQuery({
     queryKey: ["expenseData"],
     queryFn: () => fetch("/api/Expenses").then((res) => res.json()),
@@ -47,30 +42,24 @@ function AllExpenses() {
     }
   };
 
-  // const handleEditExpense = (id: number) => {
-  //   const expenseToEdit = data.find((expense: Expense) => expense.id === id);
-
-  //   setEditingExpense(expenseToEdit);
-  // };
-
-  // const handleSaveEdit = async (editedExpense: Expense) => {
-  //   try {
-  //     await updateExpense({
-  //       id: editingExpense!.id,
-  //       newExpense: editedExpense,
-  //     });
-
-  //     setEditingExpense(null);
-
+  // const editExpenseMutation = useMutation({
+  //   mutationFn: updateExpense,
+  //   onSettled: () => {
   //     queryClient.invalidateQueries({ queryKey: ["expenseData"] });
+  //   },
+  // });
+
+  // const handleEditExpense = async (id: number) => {
+  //   try {
+  //     await editExpenseMutation.mutateAsync({ id, title: "", total: 0 });
   //   } catch (error) {
-  //     console.error("Error updating expense:", error);
+  //     console.error("Error editing expense:", error);
   //   }
   // };
 
   return (
     <>
-      <h1 className="text-2xl">All Expenses</h1>
+      <h1 className="text-2xl ml-5">All Expenses</h1>
       <Table>
         <TableCaption>A list of your recent expenses.</TableCaption>
         <TableHeader>
@@ -86,18 +75,13 @@ function AllExpenses() {
               <TableCell className="text-right">
                 {formatCurrency(expense.total)}
               </TableCell>
-              <button
+
+              <TableCell
                 onClick={() => handleDeleteExpense(expense.id)}
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 hover:text-red-700 hover:bg-red-900 align-middle"
               >
                 Delete
-              </button>
-              <button
-                // onClick={() => handleEditExpense(expense.id)}
-                className="text-blue-500 hover:text-blue-700"
-              >
-                Edit
-              </button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { getExpenses, Expense } from "@/network";
+import { Expense } from "@/network";
 
 
 export const Route = createFileRoute("/")({
@@ -17,7 +17,7 @@ function HomePage() {
     queryFn: () => fetch("/api/Expenses").then((res) => res.json()),
   });
 
-  if (isPending) return <h1>Loading...</h1>;
+  if (isPending) return <h1 className="flex justify-center items-center">Loading...</h1>;
   if (error) return <h1>Error: {error.message}</h1>;
 
   const totalSpent = formatCurrency(

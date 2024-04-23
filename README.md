@@ -16,11 +16,11 @@ _September 2023 - December 2023_
 - **/cointrack/frontend** : ```npm install```
 - **/cointrack/frontend** : ```npm run dev```
 
-## 📥 How to use:
+## 📚 Features + 📥 How to use:
 
-1. _Total_ page, which is the main page, displays the total expense amount you have posted.
-2. _All_ lists all of your expenses.
-3. You can post a new expense from _New_ page.
+1. **Rendering sum of expense amount** : _Total_ page, which is the main page, displays the total expense amount you have posted.
+3. **Rendering and deleting list of expense** : _All_ lists all of your expenses. You can delete your expense list in this page.
+4. **Posting your expense** : You can post a new expense from _New_ page.
 
 ---
 
